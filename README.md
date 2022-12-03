@@ -1,3 +1,3 @@
 # Persona 5 Landing page
 
-Final project form SheCodes Basic
+Final project for SheCodes Basic
