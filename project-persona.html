@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona-5</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: black;
+        }
+        main{
+            margin:20px;
+            background-image:linear-gradient(to right,rgba(0, 0, 0, 0.89),#dd1818);
+            background-size: cover;
+            border-radius: 8px;
+            color:whitesmoke;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h1{
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        h2{
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        hr{
+            margin:15px;
+        }
+
+        img{
+            width:100%;
+        }
+
+        .game-info{
+            margin: 10px 15px;
+            padding:20px;
+            line-height: 1.5;
+            text-align: justify;
+            font-size:1.2rem;
+        }
+
+        strong{
+            font-size:1.2rem;
+            text-decoration: underline;
+        }
+
+        .link-wiki{
+            display:block;
+            margin: 5px 15px;
+            padding:0px 5px 0px 20px;
+            width:130px;
+            font-size: 1.2rem;
+            color:whitesmoke;
+            text-decoration: none;
+            transition: all 200ms ease-in-out;
+        }
+
+        .link-wiki:hover{
+            text-decoration: underline;
+            color: #D9CE3F;
+        }
+
+        button{
+            display:block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #D9CE3F;
+            border: 1px solid #02040c;
+            border-radius: 6px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+            transition: all 200ms ease-in-out;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        button:hover{
+        background-color:#02040c;
+        border: 1px solid  #D9CE3F;
+        color:whitesmoke;
+        cursor: pointer;
+        }
+
+        span{
+            display:block;
+        }
+
+        div{
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .programmer-info{
+            color:whitesmoke;
+            text-decoration: none;
+            transition: all 200ms ease-in-out;
+        }
+
+        .programmer-info:hover{
+            text-decoration: underline;
+            color: #D9CE3F;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>🎮 I love video games 🎮</h1>
+        <h2>Especially Persona 5</h2>
+        <hr>
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/674/original/persona-5.jpg?1662508213" alt="Persona characters">
+        <hr>
+         <p class="game-info">
+            <strong>Persona 5</strong> is a fantasy based on reality which follows a group of troubled high school students: the protagonist and a collection of compatriots he meets along the way. These disturbed and troubled teenagers gradually realize that they are living in a toxic and dangerous world resembling a prison full of slavery, oppression and injustice, ruled by corrupted and twisted adults. They can't live with the system and can't live without it, and simply existing means they are at risk of being doomed and condemned to a life of slavery.
+        </p>
+         <a href="https://megamitensei.fandom.com/wiki/Persona_5" class="link-wiki" target="_blank">
+            Learn more here
+        </a>
+        <button>
+            Mental palace
+            <span>😈</span>
+        </button>
+        <div>
+            This page was build by 
+            <a href="https://www.shecodesfoundation.org/candidates/35241-diana-castano-colombian" class="programmer-info">
+                Diana Castaño
+            </a>
+        </div>   
+    </main>
+    <script>
+        let buttonPalace= document.querySelector("button");
+        buttonPalace.addEventListener("click",palaceMental)
+        function palaceMental(){
+            let name=prompt("What is your name?");
+            let mentalState=prompt("How is your mental palace, wicked 👹 or nice 😇? " );
+            let mainImage = document.querySelector("img");
+            let mainTitle = document.querySelector("h1");
+            let secondTitle = document.querySelector("h2");
+            let secondParagraph = document.querySelector(".game-info");
+
+            if(name.length>0 && (mentalState.toLowerCase()== "nice" ||mentalState.toLowerCase()== "😇")){
+                alert(`Hi ${name}, you are safe! You are not going to meet The Phantom Thieves yet 👀`);
+            }else if(name.length>0 && (mentalState.toLowerCase()== "wicked" ||mentalState.toLowerCase()== "👹")){
+                mainTitle.innerHTML = `Oh no ${name}!`;
+                secondTitle.innerHTML=`you have been attacked by The phatom thieves 🖤`;
+                mainImage.src ="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/677/original/persona-logo.png?1662518628";
+                secondParagraph.innerHTML="The only way to change this fate is reloading this website."
+                document.querySelector('.link-wiki').style = 'display:none'
+                document.querySelector('button').style = 'display:none'
+            }else{
+                alert("oh no! Igor took your website 😱" )
+                mainTitle.innerHTML = `Hello ${name}!`;
+                secondTitle.innerHTML=`And welcome to the Velvet Room.`;
+                mainImage.src ="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/678/original/Igor-persona5.gif?1662519644";
+                secondParagraph.innerHTML="Sorry, the only way to escape of him is reloading the website."
+                document.querySelector('.link-wiki').style = 'display:none'
+                document.querySelector('button').style = 'display:none'
+            }
+        }
+    </script>
+</body>
+</html>
